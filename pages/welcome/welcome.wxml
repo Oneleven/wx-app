@@ -1,0 +1,7 @@
+<view class="container">
+  <image src="/images/img_1.jpeg" class="user-avitor"></image>
+  <text class="title">Hello welcome</text>
+  <view class="text">
+    <text>let's start</text>
+  </view>
+</view>
