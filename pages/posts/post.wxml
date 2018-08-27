@@ -1,0 +1,30 @@
+<view class="post-container">
+  <swiper indicator-dots="true" autoplay="true" circular="true" indicator-color="white" class="swiper">
+    <swiper-item class="swiper-item">
+      <image src="/images/pic1.jpg" mode="scaleToFill"></image>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <image src="/images/pic2.jpg"></image>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <image src="/images/pic3.jpg"></image>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <image src="/images/pic4.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <view class="container">
+    <view class="hero-avitor">
+      <image src="{{ img.head_img }}"></image>
+      <text class="name">{{name}}</text>
+    </view>
+    <image src="{{ img.hero_img }}" class="background" mode="widthFix"></image>
+    <text class="content">{{detail}}</text>
+    <view class="icon-container">
+      <image src="/images/icons/chat.png" class="icon-image"></image>
+      <text>12</text>
+      <image src="/images/icons/view.png" class="icon-image"></image>
+      <text>123124</text>
+    </view>
+  </view>
+</view>
