@@ -1,10 +1,4 @@
-@import './post-item/post-item-template'
-
-.swiper-item > image{
-  width: 100%;
-}
-
-/* .hero-avitor {
+.hero-avitor {
   display: flex;
   align-items: center;
   margin: 10rpx
@@ -59,4 +53,4 @@
 .icon-container > text {
   padding: 0 10rpx;
   font-size: 13px
-} */
+}

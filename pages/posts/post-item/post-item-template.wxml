@@ -1,0 +1,16 @@
+<template name="postName">
+  <view class="container">
+    <view class="hero-avitor">
+      <image src="{{ img.head_img }}"></image>
+      <text class="name">{{name}}</text>
+    </view>
+    <image src="{{ img.hero_img }}" class="background" mode="widthFix"></image>
+    <text class="content">{{detail}}</text>
+    <view class="icon-container">
+      <image src="/images/icons/chat.png" class="icon-image"></image>
+      <text>{{star}}</text>
+      <image src="/images/icons/view.png" class="icon-image"></image>
+      <text>{{read}}</text>
+    </view>
+  </view>
+</template>
