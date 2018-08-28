@@ -7,9 +7,9 @@
   <view class="icon-container">
     <image catchtap="onCollectionTap" wx:if='{{collected}}' src="/images/icons/collection.png" class="icon-image"></image>
     <image catchtap="onCollectionTap" wx:else src="/images/icons/collection-anti.png" class="icon-image"></image>
-    <image src="/images/icons/share.png" class="icon-image"></image>
-    <image src="/images/icons/music-start.png" class="icon-image"></image>
-    <image src="/images/icons/music-stop.png" class="icon-image"></image>
+    <image src="/images/icons/share.png" class="icon-image" catchtap='onShowTap'></image>
+    <image src="{{isPlayingMusic ? '/images/icons/music-stop.png' : '/images/icons/music-start.png'}}" class="icon-image" catchtap='onMusicTap'></image>
+    <!-- <image src="/images/icons/music-stop.png" class="icon-image"></image> -->
   </view>
   <text class="content">{{ content }}</text>
 </view>
