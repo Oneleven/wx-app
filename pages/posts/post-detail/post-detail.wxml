@@ -1,0 +1,15 @@
+<view class="container">
+  <image src="{{ img.hero_img }}" class="background" mode="widthFix"></image>
+  <view class="hero-avitor">
+    <image src="{{ img.head_img }}"></image>
+    <text class="name">{{name}}</text>
+  </view>
+  <view class="icon-container">
+    <image catchtap="onCollectionTap" wx:if='{{collected}}' src="/images/icons/collection.png" class="icon-image"></image>
+    <image catchtap="onCollectionTap" wx:else src="/images/icons/collection-anti.png" class="icon-image"></image>
+    <image src="/images/icons/share.png" class="icon-image"></image>
+    <image src="/images/icons/music-start.png" class="icon-image"></image>
+    <image src="/images/icons/music-stop.png" class="icon-image"></image>
+  </view>
+  <text class="content">{{ content }}</text>
+</view>

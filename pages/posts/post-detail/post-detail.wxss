@@ -1,0 +1,56 @@
+.hero-avitor {
+  display: flex;
+  align-items: center;
+  margin: 10rpx
+}
+
+.hero-avitor > image {
+  border-radius: 50%;
+  height: 80rpx;
+  width: 80rpx;
+  border: 1px solid black;
+}
+
+.background {
+ width: 100%
+}
+
+.icon-image {
+  width: 50rpx;
+  height: 50rpx;
+  padding-right: 10rpx;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: bold;
+  padding-left: 20rpx;
+  color: #333333
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20 rpx;
+  margin-bottom: 40rpx;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  padding-bottom: 5px;
+}
+
+.content {
+  font-size: 13px;
+  padding: 20rpx 10rpx;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  padding: 10rpx
+}
+
+.icon-container > text {
+  padding: 0 10rpx;
+  font-size: 13px
+}

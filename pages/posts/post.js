@@ -2,6 +2,13 @@ var postData = require('../../data/posts-data.js')
 
 Page({
 
+  onPostTap (e) {
+    let postId = e.currentTarget.dataset.postid
+    wx.navigateTo({
+      url: './post-detail/post-detail?id=' + postId,
+    })
+  },
+
   /**
    * 页面的初始数据
    */
