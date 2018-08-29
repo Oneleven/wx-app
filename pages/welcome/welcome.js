@@ -1,19 +1,10 @@
 Page({
-  skipToPost () {
-    wx.navigateTo({
-      url:'../posts/post'
-    })
-
-    // wx.redirectTo({
-    //   url: '../posts/post'
+  skipToPost (e) {
+    // wx.navigateTo({
+    //   url:'../posts/post'
     // })
-  },
-
-  onHide () {
-    console.log('hide')
-  },
-
-  onUnload () {
-    console.log('onunload')
+    wx.switchTab({
+      url: '../posts/post',
+    })
   }
 })

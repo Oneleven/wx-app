@@ -2,9 +2,27 @@
   "pages": [
     "pages/welcome/welcome",
     "pages/posts/post",
+    "pages/movies/movie",
     "pages/posts/post-detail/post-detail"
   ],
   "window":{
     "navigationBarBackgroundColor":"#F2FFFF"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/posts/post",
+        "text": "王者荣耀",
+        "iconPath": "images/icons/yuedu.png",
+        "selectedIconPath": "images/icons/yuedu_hl.png"
+      },
+      {
+        "pagePath": "pages/movies/movie",
+        "text": "电影",
+        "iconPath": "images/icons/dianying.png",
+        "selectedIconPath": "images/icons/yuedu_hl.png"
+      }
+    ]
   }
 }
