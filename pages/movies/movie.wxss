@@ -1,0 +1,9 @@
+.aaa {
+  background-color: red;
+  border: 1px solid black;
+}
+
+.bbb {
+  border: 1px solid green;
+  height: 100rpx
+}

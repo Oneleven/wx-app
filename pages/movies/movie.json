@@ -1,3 +1,7 @@
 {
-  
+  "usingComponents": {
+    "int-button": "/dist/button/index",
+      "van-row": "/dist/row/index",
+      "van-col": "/dist/col/index"
+  }
 }

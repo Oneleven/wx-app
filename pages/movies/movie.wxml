@@ -1,1 +1,8 @@
-<text>电影</text>
+<int-button type="primary">电影</int-button>
+<van-row>
+  <van-col span="8" custom-class="aaa">span: 8</van-col>
+  <van-col span="8">
+    <view class="bbb"></view>
+  </van-col>
+  <van-col span="8">span: 8</van-col>
+</van-row>
