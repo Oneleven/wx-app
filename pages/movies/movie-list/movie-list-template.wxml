@@ -5,7 +5,7 @@
     <view class="movie-head">
       <text class="movie-slogan">{{mode}}</text>
       <view class="movie-more">
-        <text class="movie-more-text">更多</text>
+        <text class="movie-more-text" catchtap='onMoreTap' data-mode="{{mode}}">更多</text>
         <image class="more-arrow" src="/images/icons/arrow-right.png"></image>
       </view>
     </view>

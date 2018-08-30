@@ -38,11 +38,12 @@ Page({
   processData(res, flag) {
     const movieDatass = []
     const datas = res.data.subjects
+    
     datas.forEach((data)=> {
       const temp = {
         stars: util.starNumber(data.rating.stars),
         title: data.title,
-        averageScore: data.rating.average,
+        averageScore: this._repair(data.rating.average),
         imgUrl: data.images.large,
         movieId: data.id
       }
@@ -56,6 +57,12 @@ Page({
     })
   },
 
+  // averageScore补零
+  _repair (num){
+    return num.toString().length === 1 ? num + '.0' : num
+  },
+
+
 
   // fly.js请求
   _getDoubanInfo(url, flag) {
@@ -66,6 +73,14 @@ Page({
       .catch(function (error) {
         console.log(error);
       });
+  },
+
+  // 点击更多跳转页面
+  onMoreTap (e) {
+    const mode = e.currentTarget.dataset.mode
+    wx.navigateTo({
+      url: './more-movie/more-movie?mode=' + mode,
+    })
   }
 
 

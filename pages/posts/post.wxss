@@ -1,4 +1,4 @@
-@import './post-item/post-item-template'
+@import './post-item/post-item-template';
 
 .swiper-item > image{
   width: 100%;
