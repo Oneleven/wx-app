@@ -1,9 +1,5 @@
-.aaa {
-  background-color: red;
-  border: 1px solid black;
-}
+@import './movie-list/movie-list-template.wxss';
 
-.bbb {
-  border: 1px solid green;
-  height: 100rpx
+.main-movie-container {
+  background-color: #f2f2f2;
 }

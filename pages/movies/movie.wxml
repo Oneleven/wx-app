@@ -1,8 +1,10 @@
-<int-button type="primary">电影</int-button>
-<van-row>
-  <van-col span="8" custom-class="aaa">span: 8</van-col>
-  <van-col span="8">
-    <view class="bbb"></view>
-  </van-col>
-  <van-col span="8">span: 8</van-col>
-</van-row>
+<import src="./movie-list/movie-list-template"/>
+
+<view class="main-movie-container">
+  <template is="movie-list-template" data="{{...inTheaters,mode:mode[0]}}"/>
+  <template is="movie-list-template" data="{{...comingSoon,mode:mode[1]}}"/>
+  <template is="movie-list-template" data="{{...top250,mode:mode[2]}}"/>
+</view>
+
+
+

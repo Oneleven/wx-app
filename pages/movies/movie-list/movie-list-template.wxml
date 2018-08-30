@@ -1,0 +1,26 @@
+<import src="../poster/poster-template" />
+
+<template name="movie-list-template">
+  <view class="movie-list-container">
+    <view class="movie-head">
+      <text class="movie-slogan">{{mode}}</text>
+      <view class="movie-more">
+        <text class="movie-more-text">更多</text>
+        <image class="more-arrow" src="/images/icons/arrow-right.png"></image>
+      </view>
+    </view>
+    <van-row>
+      <block wx:for="{{movieDatas}}" wx:for-item="movieData" wx:key="{{movieData.movieId}}">
+        <van-col span="8" custom-class="aaa">
+          <template is="poster-template" data="{{...movieData}}"/>
+        </van-col>
+      </block>
+
+      <!-- <van-col span="8" custom-class="aaa">
+        <template is="poster-template" />
+      </van-col> -->
+
+    </van-row>
+
+  </view>
+</template>
