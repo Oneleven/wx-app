@@ -1,0 +1,18 @@
+<import src="../poster/poster-template" />
+
+
+<template name="movie-grid-template">
+  <scroll-view scroll-x="{{false}}" scroll-y="{{true}}" bindscrolltolower="loadMore" class="more-movie-container">
+    <van-row>
+      <block wx:for="{{movieDatas}}" wx:key="{{index}}" wx:for-item="movieData">
+
+        <van-col span="8">
+          <view class="movie-grid-template-container">
+            <template is="poster-template" data="{{...movieData}}" />
+          </view>
+        </van-col>
+
+      </block>
+    </van-row>
+  </scroll-view>
+</template>

@@ -21,3 +21,11 @@
   white-space: nowrap;
 
 }
+
+.no-result {
+  display: block;
+  text-align: center;
+  background-color: #F4F4F4;
+  padding-top: 40rpx;
+  font-size: 15px;
+}

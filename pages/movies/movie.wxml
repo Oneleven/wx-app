@@ -1,10 +1,23 @@
-<import src="./movie-list/movie-list-template"/>
+<import src="./movie-list/movie-list-template" />
+<import src="./movie-grid/movie-grid-template" />
 
-<view class="main-movie-container">
-  <template is="movie-list-template" data="{{...inTheaters,mode:mode[0]}}"/>
-  <template is="movie-list-template" data="{{...comingSoon,mode:mode[1]}}"/>
-  <template is="movie-list-template" data="{{...top250,mode:mode[2]}}"/>
+<view>
+
+  <van-search placeholder="请输入想要搜索的电影"
+              bind:change="onChange"
+              custom-class="youzan-search"
+              bind:search= "confirmSearch">
+  </van-search>
+
+  <view class="main-movie-container" wx:if="{{!isShowSearchPage}}">
+    <template is="movie-list-template" data="{{...inTheaters,mode:mode[0]}}" />
+    <template is="movie-list-template" data="{{...comingSoon,mode:mode[1]}}" />
+    <template is="movie-list-template" data="{{...top250,mode:mode[2]}}" />
+  </view>
+
+  <view class="search-page" wx:if="{{isShowSearchPage}}">
+    <text class="no-result" wx:if="{{isShowNoResult}}"> 没搜索到你的小电影哦～</text>
+    <template is="movie-grid-template" data="{{...searchResult}}"/>
+  </view>
+
 </view>
-
-
-

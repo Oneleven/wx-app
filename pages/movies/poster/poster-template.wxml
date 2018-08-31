@@ -1,15 +1,7 @@
 <import src="../stars/star-template"/>
 
-<!-- <template name="poster-template">
-  <view class="movie-container">
-    <image src="/images/yiren.png" class="movie-img"></image>
-    <text class="movie-title">yiren</text>
-    <template is="starTemplate" />
-  </view>
-</template> -->
-
 <template name="poster-template">
-  <view class="movie-container">
+  <view class="movie-container" catchtap='onMovieDetail' data-movieId="{{movieId}}">
     <image src="{{imgUrl}}" class="movie-img"></image>
     <text class="movie-title">{{title}}</text>
     <template is="starTemplate" data="{{averageScore,stars}}"/>

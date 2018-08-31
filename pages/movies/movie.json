@@ -2,7 +2,8 @@
   "usingComponents": {
     "int-button": "/dist/button/index",
       "van-row": "/dist/row/index",
-      "van-col": "/dist/col/index"
+      "van-col": "/dist/col/index",
+      "van-search": "/dist/search/index"
   },
   "navigationBarTitleText": "电影",
   "navigationBarTextStyle": "black"

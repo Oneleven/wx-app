@@ -6,7 +6,10 @@ var fly = new Fly
 Page({
 
   data: {
-    mode:['正在热映','即将上映','top250']
+    mode:['正在热映','即将上映','top250'],
+    isShowSearchPage: false,
+    isFocus: false,
+    isShowNoResult: false
   },
 
   onLoad: function(options) {
@@ -38,23 +41,31 @@ Page({
   processData(res, flag) {
     const movieDatass = []
     const datas = res.data.subjects
-    
-    datas.forEach((data)=> {
-      const temp = {
-        stars: util.starNumber(data.rating.stars),
-        title: data.title,
-        averageScore: this._repair(data.rating.average),
-        imgUrl: data.images.large,
-        movieId: data.id
-      }
-      movieDatass.push(temp)
-    })
 
-    this.setData({
-      [flag]: {
-        movieDatas: movieDatass
-      }
-    })
+    if (datas.length === 0) {
+      this.setData({
+        isShowNoResult: true
+      })
+    } else {
+      datas.forEach((data) => {
+        const temp = {
+          stars: util.starNumber(data.rating.stars),
+          title: data.title,
+          averageScore: this._repair(data.rating.average),
+          imgUrl: data.images.large,
+          movieId: data.id
+        }
+        movieDatass.push(temp)
+      })
+
+      this.setData({
+        [flag]: {
+          movieDatas: movieDatass
+        },
+        isShowNoResult: false
+      })
+    }
+    
   },
 
   // averageScore补零
@@ -69,6 +80,7 @@ Page({
     fly.get(url)
       .then((res)=> {
         this.processData(res, flag)
+        // console.log(res)
       })
       .catch(function (error) {
         console.log(error);
@@ -81,7 +93,39 @@ Page({
     wx.navigateTo({
       url: './more-movie/more-movie?mode=' + mode,
     })
+  },
+
+  // 搜索框聚焦
+
+  onChange (e) {
+    var content = e.detail.toString().trim()
+    if (content === '') {
+      this.setData({
+        isShowSearchPage: false,
+        isShowNoResult: false
+      })
+    } else {
+      this.setData({
+        isShowSearchPage: true,
+        content
+      })
+    }
+  },
+
+  // 确定搜索
+  confirmSearch (e) {
+    var searchUrl = app.globalData.g_doubanBase + "/v2/movie/search?q=" + this.data.content
+    this.setData({
+      searchResult:{}
+    })
+    this._getDoubanInfo(searchUrl, 'searchResult')
+  },
+
+  //跳转到电影详情
+  onMovieDetail (e) {
+    const movieId = e.currentTarget.dataset.movieid
+    wx.navigateTo({
+      url: './movie-detail/movie-detail?movieId=' + movieId,
+    })
   }
-
-
 })

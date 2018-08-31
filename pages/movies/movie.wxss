@@ -1,5 +1,22 @@
 @import './movie-list/movie-list-template.wxss';
+@import './movie-grid/movie-grid-template.wxss';
 
 .main-movie-container {
   background-color: #f2f2f2;
+  margin-top: 93rpx
+}
+
+.search-page {
+  position: fixed;
+  top: 93rpx;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.youzan-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
