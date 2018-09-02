@@ -27,7 +27,7 @@ Page({
       .then((res) => {
         this.processData(res)
         console.log(res)
-        console.log(this.data)
+        console.log(this.data.movie)
       })
       .catch((err) => {
         console.log(err)
@@ -48,7 +48,10 @@ Page({
       genres: datas.genres.join("、 "),
       originalTitle: datas.original_title,
       averageScore: this._repair(datas.rating.average),
-      summary: datas.summary
+      summary: datas.summary.replace(/\\n/g, ''),
+      casts: this._castName(datas.casts),
+      director:datas.directors[0].name,
+      castInfo: datas.casts
     }
 
     this.setData({
@@ -60,6 +63,30 @@ Page({
   _repair(num) {
     return num.toString().length === 1 ? num + '.0' : num
   },
+
+  // casts数据转换
+  _castName(castArr){
+    let arr = []
+    castArr.forEach((item)=>{
+      arr.push(item.name)
+    })
+    let castName = arr.join(' / ')
+    return castName
+  },
+
+  _castInfo(castArr){
+    let arr = []
+    castArr.forEach((item)=>{
+      arr.push(item.avatars.large)
+    })
+  },
+
+  viewImage (e) {
+    var src = e.currentTarget.dataset.src
+    wx.previewImage({
+      urls: [src],
+    })
+  }
 
 
 })

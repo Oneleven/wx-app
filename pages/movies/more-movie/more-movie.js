@@ -8,8 +8,7 @@ Page({
 
   data: {
     mode: '',
-    num: 12,
-    isLoading: false
+    num: 12
   },
 
   onLoad: function(options) {
@@ -50,8 +49,7 @@ Page({
     })
 
     this.setData({
-      movieDatas: movieDatass,
-      isLoading: false
+      movieDatas: movieDatass
     })
   },
 
@@ -64,20 +62,14 @@ Page({
 
   // fly.js请求
   _getDoubanInfo(url) {
-    this.setData({
-      isLoading: true
-    })
+
     fly.get(url)
       .then((res) => {
-        var timeId
-        if (timeId) {
-          clearTimeout(timeId)
-        }
-        timeId = setTimeout(() => {
-          wx.hideLoading()
-          wx.hideNavigationBarLoading()
-          this.processData(res)
-        }, 1000)
+
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
+        this.processData(res)
+
       })
       .catch((err) => {
         console.log(err)
@@ -108,6 +100,14 @@ Page({
     if (!this.data.isLoading) {
       this._getDoubanInfo(url[this.data.mode])
     }
+  },
+
+  // 跳转到电影详情页
+  onMovieDetail(e) {
+    const movieId = e.currentTarget.dataset.movieid
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?movieId=' + movieId,
+    })
   }
 
 })
